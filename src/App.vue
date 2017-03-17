@@ -1,19 +1,67 @@
 <template>
   <div id="app">
-    <nav>
-      <menu-vertical :routes="routes"></menu-vertical>
-    </nav>
-    <router-view></router-view>
+    <menu-vertical :routes="routes"></menu-vertical>
+    <div class="app-view">
+      <btn @btnClick="toggleMenu($event)" classe="menu-toggle open">
+        <span class="linha"></span>
+        <span class="linha"></span>
+        <span class="linha"></span>
+      </btn>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 import { routes } from './routes';
 import MenuVertical from './components/shared/MenuVertical.vue';
+import Button from './components/shared/form/Button.vue';
 
 export default {
   components: {
-    'menu-vertical': MenuVertical
+    'menu-vertical': MenuVertical,
+    'btn': Button
+  },
+  methods: {
+    toggleMenu(event){
+        var toggleButton = event.currentTarget,
+            classe = toggleButton.className;
+        if(classe.indexOf("open") !== -1){
+          animation({
+              el: this.$children[0].$el,
+              valor: 2,
+              atributo: 'margin-left',
+              tipo: "px",
+              crescent: true,
+              time: 1,
+              total: 0,
+              inicial: -204
+          });
+          toggleButton.className = "menu-toggle close";
+          toggleButton.parentElement.className = "app-view app-parcial"
+          
+          toggleButton.children[0].className = "linha linha1-x";
+          toggleButton.children[1].className = "linha linha2-x";
+          toggleButton.children[2].className = "linha linha3-x";
+        }else{
+          animation({
+              el: this.$children[0].$el,
+              valor: 2,
+              atributo: 'margin-left',
+              tipo: "px",
+              crescent: false,
+              time: 1,
+              total: -204,
+              inicial: 0
+          });
+          toggleButton.className = "menu-toggle open";
+          toggleButton.parentElement.className = "app-view app-total"
+
+          toggleButton.children[0].className = "linha";
+          toggleButton.children[1].className = "linha";
+          toggleButton.children[2].className = "linha";
+        }
+    }
   },
   data () {
     return { routes }
@@ -28,44 +76,72 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: -7px;
 }
-
-h1, h2 {
-  font-weight: normal;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-nav {
-    background: #4d4d4d;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left:0;
-    padding: 1px;
-    width: 200px;
-    text-align:center;
-    box-sizing: border-box;
-    box-shadow: 3px 3px 3px 0px #7b7b7b;
-}
-nav input {
-    width: 100%;
-    border: 1px solid #404040;
-    background: #e7e7e7;
-    outline: none;
-    padding: 4px;
-    border-radius: 3px;
-}
-nav ul{
-    list-style: none;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+.app-view{
+    display: block;
     position: relative;
+    background: #ebefef;
+    padding: 1%;
+    z-index: 1;
+    box-sizing:border-box;
+    float:left;
     width: 100%;
-    padding: 0;
-    text-align: center;
 }
+.app-view div{ box-sizing: border-box; width: 100%; position: relative; }
+.app-parcial{ width: 86.6%; transition:.2s; }
+.app-total{ width: 100%; transition:1s; }
+.menu-toggle {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    z-index: 9999;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    background: #fff;
+    outline: 0;
+    border: 1px solid #ebefef;
+    border-radius: 3px;
+    padding: 2px;
+    cursor: pointer;
+    transition:.5s;
+}
+.menu-toggle:hover{ background: #c3c1c1;}
+.menu-toggle:hover span{ background: #4d4d4d;}
+.linha{ display:block; position: relative; height: 4px; width: 33px; background: #4d4d4d; margin: 4px 0; transition: .7s; }
+.linha1-x{  background:#F44336; transform: rotate(49deg); top: 8px; left: 2px; width: 30px; }
+.linha2-x{ opacity:0; }
+.linha3-x{ background:#F44336; transform: rotate(132deg); bottom: 8px; left: 2px; width: 30px; }
 /*.pages-enter, .pages-leave-active{
     opacity:0;
 }

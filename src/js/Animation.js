@@ -16,13 +16,13 @@ function animation(conf){
             if(conf.crescent){
                 if (valor >= conf.total){ clearInterval(linear); }
             }else{
-                if (valor <= 0){ clearInterval(linear); }
+                if (valor <= conf.total){ clearInterval(linear); }
             }
         }else{
             if(conf.crescent){
                 if (valor >= conf.total()){ clearInterval(linear); }
             }else{
-                if (valor <= 0){ clearInterval(linear); }
+                if (valor <= conf.total()){ clearInterval(linear); }
             }
         }
     },conf.time);

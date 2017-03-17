@@ -1,14 +1,16 @@
 <template>
-    <ul class="nav">
-        <li v-for="item in routes" :class="item.filhos.length > 0 ? 'haschildren' : ''">
-            <router-link @click.native="openMenu($event,item.filhos)" :to="item.path ? item.path : '/'">{{ item.nome }}<span class="arrow">{{item.filhos.length > 0 ? '>' : ''}}</span></router-link>
-            <ul class="subnav">
-                <li v-for="itemFilho in item.filhos" :class="itemFilho.filhos.length > 0 ? 'haschildren' : ''">
-                    <router-link :to="itemFilho.path">{{ itemFilho.nome }}</router-link>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <nav>
+        <ul class="nav">
+            <li v-for="item in routes" :class="item.filhos.length > 0 ? 'haschildren' : ''">
+                <router-link @click.native="openMenu($event,item.filhos)" :to="item.path ? item.path : '/'">{{ item.nome }}<span class="arrow">{{item.filhos.length > 0 ? '>' : ''}}</span></router-link>
+                <ul class="subnav">
+                    <li v-for="itemFilho in item.filhos" :class="itemFilho.filhos.length > 0 ? 'haschildren' : ''">
+                        <router-link :to="itemFilho.path">{{ itemFilho.nome }}</router-link>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </template>
 <script>
 export default {
@@ -87,6 +89,37 @@ export default {
 }
 </script>
 <style scoped>
+    nav {
+        background: #4d4d4d;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left:0;
+        padding: 1px;
+        /*width: 200px;*/
+        width: 13.2%;
+        text-align:center;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 3px 0px #7b7b7b;
+        z-index: 10;
+        margin-left: -204px;
+        float:left;
+    }
+    nav input {
+        width: 100%;
+        border: 1px solid #404040;
+        background: #e7e7e7;
+        outline: none;
+        padding: 4px;
+        border-radius: 3px;
+    }
+    nav ul{
+        list-style: none;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
     .nav a {
         color: #e5e5e5;
         text-decoration: none;
