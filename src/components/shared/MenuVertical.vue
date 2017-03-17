@@ -93,7 +93,7 @@ export default {
         background: #4d4d4d;
         height: 100%;
         position: relative;
-        top: 0;
+        top: 7px;
         left:0;
         padding: 1px;
         /*width: 200px;*/
