@@ -1,23 +1,22 @@
 <template>
   <div id="app">
     <nav>
-      <menu-vertical></menu-vertical>
+      <menu-vertical :routes="routes"></menu-vertical>
     </nav>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MenuVertical from './components/MenuVertical.vue';
+import { routes } from './routes';
+import MenuVertical from './components/shared/MenuVertical.vue';
 
 export default {
   components: {
     'menu-vertical': MenuVertical
   },
-  name: 'app',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    return { routes }
   }
 }
 </script>
@@ -67,4 +66,10 @@ nav ul{
     padding: 0;
     text-align: center;
 }
+/*.pages-enter, .pages-leave-active{
+    opacity:0;
+}
+.pages-enter-active, .pages-leave-active{
+    transition: .5s;
+}*/
 </style>

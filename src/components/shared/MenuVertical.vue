@@ -1,10 +1,10 @@
 <template>
     <ul class="nav">
-        <li v-for="item in menu" :class="item.filhos.length > 0 ? 'haschildren' : ''">
-            <a @click="openMenu($event,item.filhos)" :href="item.url">{{ item.nome }}<span class="arrow">{{item.filhos.length > 0 ? '>' : ''}}</span></a>
+        <li v-for="item in routes" :class="item.filhos.length > 0 ? 'haschildren' : ''">
+            <router-link @click.native="openMenu($event,item.filhos)" :to="item.path ? item.path : '/'">{{ item.nome }}<span class="arrow">{{item.filhos.length > 0 ? '>' : ''}}</span></router-link>
             <ul class="subnav">
                 <li v-for="itemFilho in item.filhos" :class="itemFilho.filhos.length > 0 ? 'haschildren' : ''">
-                    <a  :href="itemFilho.url">{{ itemFilho.nome }}</a>
+                    <router-link :to="itemFilho.path">{{ itemFilho.nome }}</router-link>
                 </li>
             </ul>
         </li>
@@ -12,6 +12,12 @@
 </template>
 <script>
 export default {
+    props: {
+        routes: {
+            type: Array,
+            required: true
+        }
+    },
     methods:{
         openMenu(event,filhos){
             var minhaLi = event.currentTarget.parentNode;
@@ -76,37 +82,6 @@ export default {
                     minhaLi.className = "haschildren";
                 }
             }
-        }
-    },
-    data(){
-        return {
-            menu: [{ nome: 'Home', url: '#', filhos: [
-                    { nome: 'Home 1', url: '#', filhos: [] },
-                    { nome: 'Home 2', url: '#', filhos: [] },
-                    { nome: 'Home 3', url: '#', filhos: [] },
-                    { nome: 'Home 4', url: '#', filhos: [
-                        { nome: 'Home 111', url: '#', filhos: [] },
-                        { nome: 'Home 222', url: '#', filhos: [] },
-                        { nome: 'Home 333', url: '#', filhos: [] },
-                        { nome: 'Home 444', url: '#', filhos: [] }
-                    ] },
-                ]},
-                { nome: 'Sobre', url: '#', filhos: [] },
-                { nome: 'Contato', url: '#', filhos: [] },
-                { nome: 'Design', url: '#', filhos: [
-                    { nome: 'Design 1', url: '#', filhos: [
-                        { nome: 'Design 111', url: '#', filhos: [] },
-                        { nome: 'Design 222', url: '#', filhos: [] },
-                        { nome: 'Design 333', url: '#', filhos: [] }
-                    ] },
-                    { nome: 'Design 2', url: '#', filhos: [] },
-                    { nome: 'Design 3', url: '#', filhos: [] },
-                    { nome: 'Design 4', url: '#', filhos: [] },
-                ]},
-                { nome: 'Front', url: '#', filhos: [
-                     {nome: 'Front 1', url: '#', filhos: [] }
-                ]}
-            ]
         }
     }
 }
