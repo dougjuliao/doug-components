@@ -117,7 +117,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     width: 100%;
 }
 .app-view div{ box-sizing: border-box; width: 100%; position: relative; }
-.app-parcial{ width: 86.6%; transition:.2s; }
+.app-parcial{ width: 86.6%; transition:.1s; }
 .app-total{ width: 100%; transition:1s; }
 .menu-toggle {
     position: relative;

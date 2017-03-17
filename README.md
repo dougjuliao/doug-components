@@ -16,4 +16,7 @@ npm run build
 ```
 
 ### Components criados
-    - Menu-recursivo-vertical , em andamento...
+    - Menu-recursivo-vertical , em andamento... atualmente está funcionando apenas 1 nível.
+    - Rotas - em andamento... funcionando apenas no primeiro nivel do menu.
+    - Form - Input.
+    - Form - button.
