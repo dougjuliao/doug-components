@@ -2,7 +2,7 @@
     <nav>
         <ul class="nav navbar-nav" :classe="classe">
             <li v-for="item in routes" :class="item.children ? 'dropdown' : ''">
-                <router-link :to="{ name: item.name }">{{ item.name }}</router-link>
+                <router-link :to="item.path ? item.path : '/'">{{ item.name }}</router-link>
                 <ul class="dropdown-menu" :v-if="item.children">
                     <li v-for="item2 in item.children">
                         <router-link :to="{ name: item2.name }">{{ item2.name }}</router-link>
