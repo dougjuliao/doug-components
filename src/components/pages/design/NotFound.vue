@@ -6,7 +6,7 @@
 <script>
 export default {
     data(){
-        return { titulo: 'Design - 2'};
+        return { titulo: 'Páginas não encontrada'};
     }
 }
 </script>

@@ -6,7 +6,7 @@
 <script>
 export default {
     data(){
-        return { titulo: 'Home - 2'};
+        return { titulo: 'Form inputs'};
     }
 }
 </script>

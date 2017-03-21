@@ -6,7 +6,7 @@
 <script>
 export default {
     data(){
-        return { titulo: 'Front'};
+        return { titulo: 'Validações'};
     }
 }
 </script>

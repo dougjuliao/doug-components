@@ -1,44 +1,50 @@
-import Home from './components/pages/home/Home.vue';
-import Home1 from './components/pages/home/Home1.vue';
-import Home2 from './components/pages/home/Home2.vue';
-import Home3 from './components/pages/home/Home3.vue';
+import Home from './components/pages/Home.vue';
+
+import Paginas from './components/pages/paginas/Paginas.vue';
+import Perfil from './components/pages/paginas/Perfil.vue';
+import Galeria from './components/pages/paginas/Galeria.vue';
+
+import Forms from './components/pages/forms/Forms.vue';
+import FormInputs from './components/pages/forms/FormInputs.vue';
+import Validacoes from './components/pages/forms/Validacoes.vue';
+
+import UiElements from './components/pages/ui-elements/UiElements.vue';
+import UiButtons from './components/pages/ui-elements/UiButtons.vue';
+import UiComponents from './components/pages/ui-elements/UiComponents.vue';
+import UiGrid from './components/pages/ui-elements/UiGrid.vue';
+import UiModals from './components/pages/ui-elements/UiModals.vue';
+import UiNotifications from './components/pages/ui-elements/UiNotifications.vue';
+import UiProgressBar from './components/pages/ui-elements/UiProgressBar.vue';
+import UiSpinners from './components/pages/ui-elements/UiSpinners.vue';
+
+import Tabelas from './components/pages/tabelas/Tabelas.vue';
 
 import Design from './components/pages/design/Design.vue';
-import Design2 from './components/pages/design/Design2.vue';
-import Design3 from './components/pages/design/Design3.vue';
-import Design4 from './components/pages/design/Design4.vue';
-
-import Contato from './components/pages/contato/Contato.vue';
-import Sobre from './components/pages/sobre/Sobre.vue';
-import Front from './components/pages/front/Front.vue';
+import Login from './components/pages/design/Login.vue';
+import NotFound from './components/pages/design/NotFound.vue';
 
 export const routes = [
-    { nome: 'Home', path: '', component: Home, filhos: [] },
-    { nome: 'Dropdown', path: '', filhos: [
-        { nome: 'Home 1', path: '/home1', component: Home1, filhos: [] },//Tentando entender, por que o submenu não funciona a chamada de página
-        { nome: 'Home 2', path: '/home2', component: Home2, filhos: [] },
-        { nome: 'Home 3', path: '/home3', component: Home3, filhos: [] },
-        { nome: 'Home 4', path: '', filhos: [
-            { nome: 'Home 111', path: '#', filhos: [] },//Ainda preciso verificar um jeito de deixar o menu recursivo
-            { nome: 'Home 222', path: '#', filhos: [] },
-            { nome: 'Home 333', path: '#', filhos: [] },
-            { nome: 'Home 444', path: '#', filhos: [] }
-        ] },
-    ]},
-    { nome: 'Sobre', path: '/sobre', component: Sobre, filhos: [] },
-    { nome: 'Contato', path: '/contato', component: Contato, filhos: [] },
-    { nome: 'Dropdown2', path: '', filhos: [
-        { nome: 'Design', path: '/design', component: Design, filhos: [
-            { nome: 'Design 111', path: '#', filhos: [] },
-            { nome: 'Design 222', path: '#', filhos: [] },
-            { nome: 'Design 333', path: '#', filhos: [] }
-        ] },
-        { nome: 'Design 2', path: '/design2', filhos: [] },
-        { nome: 'Design 3', path: '/design3', filhos: [] },
-        { nome: 'Design 4', path: '/design4', filhos: [] },
-    ]},
-    { nome: 'Dropdown3', path: '', filhos: [
-            {nome: 'Front 1', path: '/front', component: Front, filhos: [] }
-    ]}
-
+    { name: 'Home', path: '/', component: Home },
+    { name: 'Páginas', path: '/paginas', component: Paginas, children: [
+        { name: 'Perfil', path: 'perfil', component: Perfil },
+        { name: 'Galeria', path: 'galeria', component: Galeria }
+    ] },
+    { name: 'Forms', path: '/forms', component: Forms, children: [
+        { name: 'Inputs', path: 'inputs', component: FormInputs },
+        { name: 'Validações', path: 'validacoes', component: Validacoes }
+    ] },
+    { name: 'Elementos UI', path: '/ui', component: UiElements, children: [
+        { name: 'Buttons UI', path: 'buttons', component: UiButtons },
+        { name: 'Components UI', path: 'components', component: UiComponents },
+        { name: 'Grid UI', path: 'grid', component: UiGrid },
+        { name: 'Modals UI', path: 'modals', component: UiModals },
+        { name: 'Notifications UI', path: 'notifications', component: UiNotifications },
+        { name: 'ProgressBar UI', path: 'progressBar', component: UiProgressBar },
+        { name: 'Spinners UI', path: 'spinners', component: UiSpinners }
+    ] },
+    { name: 'Tabelas', path: '/tabelas', component: Tabelas },
+    { name: 'Design', path: '/design', component: Design, children: [
+        { name: 'Login', path: 'login', component: Login },
+        { name: '404', path: '404', component: NotFound }
+    ] }
 ];

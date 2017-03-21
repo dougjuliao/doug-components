@@ -6,7 +6,7 @@
 <script>
 export default {
     data(){
-        return { titulo: 'Design - 3'};
+        return { titulo: 'UI - Buttons'};
     }
 }
 </script>

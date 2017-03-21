@@ -6,7 +6,7 @@
 <script>
 export default {
     data(){
-        return { titulo: 'Design - 4'};
+        return { titulo: 'Galeria'};
     }
 }
 </script>

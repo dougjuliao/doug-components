@@ -21,8 +21,4 @@ export default {
     }
 }
 </script>
-<style>
-    .btn{
-
-    }
-</style>
+<style></style>
