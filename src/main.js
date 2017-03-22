@@ -3,11 +3,13 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import { routes } from './routes';
 
+import '../assets/Animation';
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({ 
   routes,
-  //mode:'history'
+  mode:'history'
 });
 
 new Vue({
