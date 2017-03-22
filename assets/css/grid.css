@@ -1,0 +1,20 @@
+.grid{
+    width:100%;
+    background:#666;
+    float:left;
+    position:relative;
+    margin: 0.15%;
+}
+.g-1{ width:99.7% }
+.g-2{ width:49.7% }
+.g-3{ width:33.033%; }
+.g-4{ width:24.689%; }
+.g-5{ width:19.689%; }
+.g-6{ width:16.357%;}
+
+@media screen and (max-width: 700px){
+    .g-4,.g-5,.g-6{ width: 99.7%; }
+}
+@media screen and (max-width: 500px){
+    .g-2,.g-3{ width: 99.7%; }
+}
