@@ -24,5 +24,7 @@ npm run build
   -- Ainda não descobri um jeito de Utilizar o children do vue-router.
 - Table com request get (vue resource)...
 - Grid css com até 6 colunas. Ex.:
-  <div class="grid g-1"></div>
+  <pre>
+    <div class="grid g-1"></div>
+  </pre>
 
