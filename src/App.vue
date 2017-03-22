@@ -40,7 +40,6 @@ export default {
     width: 100%;
     margin-top: 50px;
 }
-.app-view div{ box-sizing: border-box; width: 100%; position: relative; }
 .app-parcial{ width: 86.6%; transition:.1s; }
 .app-total{ width: 100%; transition:1s; }
 .menu-toggle {

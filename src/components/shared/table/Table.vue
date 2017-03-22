@@ -1,24 +1,16 @@
 <template>
-    <table>
+    <table class="table">
         <caption>{{ titulo }}</caption>
         <thead>
             <tr>
-                <th>Header1</th>
-                <th>Header2</th>
+                <th v-for="header in urlRest.columns">{{ header }}</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Container1</td>
-                <td>Container2</td>
+            <tr v-for="bd in urlRest.dt">
+                <td v-for="bdItem in bd">{{ bdItem }}</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <td>Footer1</td>
-                <td>Footer2</td>
-            </tr>
-        </tfoot>
     </table>
 </template>
 <script>
@@ -26,6 +18,10 @@ export default {
    props: {
        titulo: {
            type: String
+       },
+       urlRest: {
+            type: Object,
+            required: true
        }
    }
 }
