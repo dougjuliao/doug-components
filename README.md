@@ -25,6 +25,38 @@ npm run build
 - Table com request get (vue resource)...
 - Grid css com até 6 colunas. Ex.:
   ```html
-    <div class="grid g-1"></div>
+    <section>
+        <div class="grid exemplo-grid g-1"><p>1</p></div>
+    </section>
+    <section>
+        <div class="grid exemplo-grid g-2"><p>2</p></div>
+        <div class="grid exemplo-grid g-2"><p>2</p></div>
+    </section>
+    <section>
+        <div class="grid exemplo-grid g-3"><p>3</p></div>
+        <div class="grid exemplo-grid g-3"><p>3</p></div>
+        <div class="grid exemplo-grid g-3"><p>3</p></div>
+    </section>
+    <section>
+        <div class="grid exemplo-grid g-4"><p>4</p></div>
+        <div class="grid exemplo-grid g-4"><p>4</p></div>
+        <div class="grid exemplo-grid g-4"><p>4</p></div>
+        <div class="grid exemplo-grid g-4"><p>4</p></div>
+    </section>
+    <section>
+        <div class="grid exemplo-grid g-5"><p>5</p></div>
+        <div class="grid exemplo-grid g-5"><p>5</p></div>
+        <div class="grid exemplo-grid g-5"><p>5</p></div>
+        <div class="grid exemplo-grid g-5"><p>5</p></div>
+        <div class="grid exemplo-grid g-5"><p>5</p></div>
+    </section>
+    <section>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+        <div class="grid exemplo-grid g-6"><p>6</p></div>
+    </section>
   ```
 
