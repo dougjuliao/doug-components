@@ -15,8 +15,17 @@ npm run dev
 npm run build
 ```
 
-### Components criados
-    - Menu-recursivo-vertical , em andamento... atualmente está funcionando apenas 1 nível.
+### Components e funionalidades criadas
+    - Menu-recursivo-vertical.
     - Rotas - em andamento... funcionando apenas no primeiro nivel do menu.
     - Form - Input.
     - Form - button.
+    - Menu horizontal (vue router).
+        > Ainda não descobri um jeito de Utilizar o children do vue-router.
+    
+    - Table com request get (vue resource)...
+    - Grid css com até 6 colunas. Ex.:
+    ```html
+       <div class="grid g-1"></div>
+    ```
+
